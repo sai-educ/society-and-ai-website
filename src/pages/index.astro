@@ -10,8 +10,15 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
   <head>
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
     <style>
+      body {
+        background-color: #FAFAF6;
+        margin: 0;
+        padding: 0;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      }
+      
       main {
-        max-width: 1200px;
+        max-width: 100%;
         margin: 0 auto;
         padding: 2rem;
       }
@@ -21,10 +28,12 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
         padding: 4rem 0;
         border-bottom: 1px solid #e2e8f0;
         margin-bottom: 4rem;
+        max-width: 1200px;
+        margin: 0 auto 4rem auto;
       }
       
       .hero h1 {
-        font-size: 3rem;
+        font-size: 2.5rem;
         color: #1a365d;
         margin-bottom: 1rem;
         font-style: italic;
@@ -33,19 +42,23 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
       .hero .tagline {
         font-size: 1.25rem;
         color: #4a5568;
-        max-width: 800px;
+        max-width: 1000px;
         margin: 0 auto;
         line-height: 1.8;
       }
       
       .section {
         margin-bottom: 3rem;
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
       }
       
       .section h2 {
         color: #1a365d;
         font-size: 2rem;
         margin-bottom: 1.5rem;
+        text-align: center;
       }
       
       .section h3 {
@@ -58,35 +71,143 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
         line-height: 1.8;
         color: #4a5568;
         margin-bottom: 1rem;
+        font-size: 1.1rem;
       }
       
-      .focus-areas {
+      .research-section {
+        margin-bottom: 3rem;
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      
+      .research-section h2 {
+        color: #1a365d;
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+        text-align: center;
+      }
+      
+      .research-articles {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        margin-top: 2rem;
+      }
+      
+      .research-article {
+        padding: 1.5rem;
+        background: white;
+        border-radius: 8px;
+        border: 1px solid #e2e8f0;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      }
+      
+      .research-article h3 {
+        color: #2c5282;
+        margin-top: 0;
+        font-size: 1.25rem;
+      }
+      
+      .research-article p {
+        color: #718096;
+        font-size: 0.9rem;
+        margin-bottom: 0;
+      }
+      
+      .approach-section {
+        margin-bottom: 3rem;
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      
+      .programs-section {
+        background-color: #003A70;
+        padding: 4rem 2rem;
+        margin: 4rem 0;
+      }
+      
+      .programs-container {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+      
+      .programs-container h2 {
+        color: white;
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+        text-align: center;
+      }
+      
+      .programs {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         gap: 2rem;
         margin-top: 2rem;
       }
       
-      .focus-area {
-        padding: 1.5rem;
-        background: #f7fafc;
-        border-radius: 8px;
+      .program {
+        padding: 2rem;
+        background: white;
+        border-radius: 12px;
         border: 1px solid #e2e8f0;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
       }
       
-      .focus-area h3 {
-        color: #2c5282;
-        margin-top: 0;
+      .program:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 15px rgba(0,0,0,0.1);
       }
       
-      .focus-area a {
-        color: #3182ce;
-        text-decoration: none;
+      .program-image {
+        width: 100%;
+        height: 150px;
+        background-color: #e2e8f0;
+        border-radius: 8px;
+        margin-bottom: 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #718096;
         font-weight: 500;
       }
       
-      .focus-area a:hover {
-        text-decoration: underline;
+      .program h3 {
+        color: #1a365d;
+        margin-top: 0;
+        font-size: 1.4rem;
+      }
+      
+      .commons-section {
+        text-align: center;
+        padding: 3rem 0;
+        background: white;
+        border-radius: 12px;
+        border: 1px solid #e2e8f0;
+        margin: 4rem auto;
+        max-width: 1200px;
+      }
+      
+      .commons-section p {
+        font-size: 1.1rem;
+        max-width: 800px;
+        margin: 0 auto;
+        color: #4a5568;
+      }
+      
+      /* Uniform heading sizes */
+      h1 {
+        font-size: 2.5rem !important;
+      }
+      
+      h2 {
+        font-size: 2rem !important;
+      }
+      
+      h3 {
+        font-size: 1.5rem !important;
       }
     </style>
   </head>
@@ -97,88 +218,99 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
         <h1>Society & AI</h1>
         <p class="tagline">
           We're an independent virtual lab exploring the cultural, ethical, and societal dimensions 
-          of artificial intelligence in service of global sustainability.
+          of artificial intelligence in service of global sustainability. The Society & AI lab is a 
+          Scholarly Commons for Society-Centered AI design and deployment.
         </p>
       </section>
 
-      <section class="section">
+      <section class="research-section">
         <h2>Latest Research & Commentary</h2>
-        <article>
-          <h3>The New AI Literacy Framework: Preparing Students for an AI-Integrated World</h3>
-          <p>By Sai Gattupalli | August 16, 2025</p>
-        </article>
-        <article>
-          <h3>Beyond the Hype: How AI Actually Transforms Teacher Workload and Professional Practice</h3>
-          <p>By Sai Gattupalli | August 17, 2025</p>
-        </article>
-      </section>
-
-      <section class="section">
-        <h2>Our Approach</h2>
-        <p>
-          We study AI with society at the center—combining interdisciplinary research, systems thinking, 
-          and open practice to understand how emerging technologies reshape learning, work, and culture.
-        </p>
-        <p>
-          Our aim is to convey practical knowledge that advances dignity, equity, and human flourishing.
-        </p>
-      </section>
-
-      <section class="section">
-        <h2>Where We Start: Aligning AI Innovation with UN SDG 4</h2>
-        <p>
-          Our research is anchored in SDG 4: Quality Education—a blueprint for addressing interlinked 
-          challenges in equity, learning quality, teacher capacity, and lifelong learning. We develop 
-          open-access research models, finite-state systems, and pedagogical resources that explore how 
-          AI can be contextualized, critiqued, and co-designed to advance educational and socially just 
-          outcomes across diverse regions and communities.
-        </p>
-      </section>
-
-      <section class="section">
-        <h2>Key Focus Areas</h2>
-        <div class="focus-areas">
-          <div class="focus-area">
-            <h3>Future-Forward Literacies</h3>
-            <p>
-              We equip learners and educators with the habits and tools to thrive amid accelerating 
-              capability: promptcraft and meta-reasoning, AI-augmented writing, and data sensemaking 
-              with model skepticism—alongside privacy hygiene, accessibility-first design, and 
-              multilingual workflows.
-            </p>
-            <a href="/research">Explore our work →</a>
+        <div class="research-articles">
+          <div class="research-article">
+            <h3>Research Article Title 1</h3>
+            <p>Author Name | Date</p>
           </div>
-          
-          <div class="focus-area">
-            <h3>Societal and Cultural Formations of AI in Education</h3>
-            <p>
-              We examine how narratives, norms, and power shape what AI means in classrooms—authorship 
-              and assessment, teacher agency, language inclusion, and local trust—across regions and 
-              resource settings.
-            </p>
-            <a href="/research">Explore our work →</a>
+          <div class="research-article">
+            <h3>Research Article Title 2</h3>
+            <p>Author Name | Date</p>
           </div>
-          
-          <div class="focus-area">
-            <h3>Education and Public Awareness</h3>
-            <p>
-              We turn complex, technical findings into clear, accessible guidance for families, students, 
-              and educators—plain-language model/system cards, consent and disclosure practices, 
-              academic-integrity frames, and media-literacy tools.
-            </p>
-            <a href="/education">Explore our work →</a>
+          <div class="research-article">
+            <h3>Research Article Title 3</h3>
+            <p>Author Name | Date</p>
+          </div>
+          <div class="research-article">
+            <h3>Research Article Title 4</h3>
+            <p>Author Name | Date</p>
           </div>
         </div>
       </section>
 
-      <section class="section">
-        <h2>Purpose of Society & AI</h2>
+      <section class="approach-section section">
+        <h2>Our Approach</h2>
         <p>
-          The Society & AI Lab exists to explore how AI can be bent—ethically and methodologically—toward 
-          solving concrete, interlinked challenges: poverty, inequality, environmental degradation, education 
-          access, and public health. We aim to move AI beyond hype toward measurable, localized, and 
-          sustainable impact—from rural schools and urban classrooms to community learning centers and 
-          public policy labs.
+          We examine AI's transformation of society through rigorous scholarship and participatory research—synthesizing 
+          technical advances, cultural responses, and educational implications to build knowledge that serves the 
+          public good. Our work bridges academic research and community practice, ensuring that AI development 
+          remains accountable to societal needs and planetary boundaries.
+        </p>
+      </section>
+
+      <section class="approach-section section">
+        <h2>Research Anchored in Educational Transformation</h2>
+        <p>
+          With expertise in educational technology and systems design, we recognize education as humanity's primary 
+          adaptive mechanism. Our research begins with SDG 4: Quality Education—not as a narrow sectoral concern, 
+          but as the meta-system through which societies develop the capabilities to navigate technological change. 
+          We investigate how AI transforms knowledge creation, skill development, and collective learning across 
+          formal and informal settings.
+        </p>
+      </section>
+
+      <section class="programs-section">
+        <div class="programs-container">
+          <h2>Three Core Research Programs</h2>
+          <div class="programs">
+            <div class="program">
+              <div class="program-image">Program 1 Image</div>
+              <h3>Preparing Society for AGI & Transformative AI</h3>
+              <p>
+                We develop frameworks for navigating the transition to artificial general intelligence and other 
+                transformative AI systems. Drawing from complexity science and educational theory, we examine: 
+                adaptive capacity building, cognitive complementarity between humans and AI, institutional resilience 
+                strategies, and the pedagogical shifts required for a world of accelerating capability. Our research 
+                translates long-term AI trajectories into near-term educational and policy interventions.
+              </p>
+            </div>
+            
+            <div class="program">
+              <div class="program-image">Program 2 Image</div>
+              <h3>Research Translation & Public Scholarship</h3>
+              <p>
+                We synthesize findings from AI research, learning sciences, and social studies of technology—transforming 
+                technical insights into actionable knowledge for educators, policymakers, and communities. Our weekly 
+                research digests, evidence briefs, and impact assessments bridge the gap between frontier AI development 
+                and societal understanding, ensuring public discourse remains grounded in empirical evidence rather than 
+                hype or fear.
+              </p>
+            </div>
+            
+            <div class="program">
+              <div class="program-image">Program 3 Image</div>
+              <h3>Cultural Patterns & Ethical Infrastructures</h3>
+              <p>
+                We document how diverse societies interpret, adopt, and transform AI through their own value systems 
+                and knowledge traditions. This comparative research reveals alternative pathways for AI development—
+                from Indigenous data governance to Global South innovation models—while building ethical frameworks 
+                that honor cultural plurality within universal human rights principles.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="commons-section">
+        <p>
+          The Society & AI Lab exists as a Scholarly Commons for Society-Centered AI design and deployment.
         </p>
       </section>
     </main>
