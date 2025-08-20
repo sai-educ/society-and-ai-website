@@ -9,6 +9,8 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 <html lang="en">
   <head>
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    <!-- Add Playfair Display font from Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <style>
       body {
         background-color: #FAFAF6;
@@ -33,10 +35,12 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
       }
       
       .hero h1 {
+        font-family: 'Playfair Display', serif;
         font-size: 2.5rem;
         color: #1a365d;
         margin-bottom: 1rem;
         font-style: italic;
+        font-weight: 700;
       }
       
       .hero .tagline {
