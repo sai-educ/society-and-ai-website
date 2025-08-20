@@ -1,0 +1,51 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/typography.css';
+import '../styles/global.css';
+
+export interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = '' } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <BaseHead title={title} description={description} />
+  </head>
+  <body>
+    <Navigation />
+    <slot />
+    <Footer />
+    
+    <style>
+      body {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+      
+      main {
+        flex: 1;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: var(--space-lg) var(--space-md);
+      }
+      
+      .hero {
+        padding: var(--space-xl) 0;
+        border-bottom: 1px solid var(--color-border);
+        margin-bottom: var(--space-xl);
+      }
+      
+      .content-section {
+        margin-bottom: var(--space-xl);
+      }
+    </style>
+  </body>
+</html>
