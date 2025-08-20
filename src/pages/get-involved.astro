@@ -1,0 +1,77 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE } from '../consts';
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title={`Get Involved | ${SITE_TITLE}`} description="Join the Society & AI Lab" />
+  </head>
+  <body>
+    <Header />
+    <main>
+      <h1>Get Involved</h1>
+      <p class="lead">Join the Infinite Game of Education</p>
+      
+      <section>
+        <h2>Join Our Community</h2>
+        <p>The transformation of education for the AI age requires diverse perspectives and collaborative effort.</p>
+        
+        <h3>For Educators & Administrators</h3>
+        <ul>
+          <li>Pilot our AI-enhanced pedagogical frameworks</li>
+          <li>Share feedback on implementation challenges</li>
+          <li>Co-create localized solutions</li>
+        </ul>
+
+        <h3>For Researchers & Technologists</h3>
+        <ul>
+          <li>Contribute to our open-source educational AI tools</li>
+          <li>Collaborate on systems modeling of educational transformation</li>
+          <li>Develop new metrics for 21st-century learning outcomes</li>
+        </ul>
+
+        <h3>Contact</h3>
+        <p>Email: contact@societyandai.org</p>
+      </section>
+    </main>
+    <Footer />
+  </body>
+</html>
+
+<style>
+  main {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 3em 1em;
+  }
+  
+  h1 {
+    color: #1a365d;
+    font-style: italic;
+    font-size: 2.5rem;
+  }
+  
+  h2 {
+    color: #2c5282;
+    margin-top: 2rem;
+  }
+  
+  h3 {
+    color: #3182ce;
+    margin-top: 1.5rem;
+  }
+  
+  .lead {
+    font-size: 1.25rem;
+    color: #4a5568;
+    margin-bottom: 2rem;
+  }
+  
+  ul {
+    line-height: 1.8;
+  }
+</style>
