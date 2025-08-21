@@ -32,7 +32,8 @@ const { title, description = '' } = Astro.props;
       
       main {
         flex: 1;
-        max-width: 1200px;
+        max-width: 100%; /* Changed from 1200px to 100% for full width */
+        width: 100%; /* Ensure full width */
         margin: 0 auto;
         padding: var(--space-lg) var(--space-md);
       }
