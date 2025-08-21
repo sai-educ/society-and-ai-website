@@ -1,0 +1,27 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { SITE_TITLE } from '../consts';
+
+const name = "Sai Gattupalli";
+const title = "Founder & Lead Researcher";
+const bio = "Sai Gattupalli is the founder of Society & AI, where he leads research on the societal implications of artificial intelligence. With over 15 years of experience in educational technology and AI policy, Sai specializes in bridging the gap between technical advancements and societal needs.";
+const photo = "/images/sai-gattupalli.jpg"; // Replace with actual image path
+---
+
+<Layout title={`${name} | ${SITE_TITLE}`}>
+  <main>
+    <section class="hero">
+      <h1>{name}</h1>
+      <p class="lead">{title}</p>
+    </section>
+    
+    <section class="content-section">
+      <div class="author-profile">
+        <img src="{photo}" alt="{name}" class="author-photo" />
+        <div class="author-bio">
+          <p>{bio}</p>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>

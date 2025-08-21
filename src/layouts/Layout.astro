@@ -28,11 +28,13 @@ const { title, description = '' } = Astro.props;
         min-height: 100vh;
         display: flex;
         flex-direction: column;
+        margin: 0;
+        padding: 0;
       }
       
       main {
         flex: 1;
-        max-width: 100%; /* Changed from 1200px to 100% for full width */
+        max-width: 100%; /* Remove the 1200px limit */
         width: 100%; /* Ensure full width */
         margin: 0 auto;
         padding: var(--space-lg) var(--space-md);
