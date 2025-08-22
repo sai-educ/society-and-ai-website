@@ -12,7 +12,7 @@
   --color-accent: #3182ce;      /* Bright blue */
   --color-text: #2d3748;        /* Dark gray */
   --color-text-light: #4a5568;  /* Medium gray */
-  --color-bg: #ffffff;
+  --color-bg: #FAFAF6;          /* Changed to #FAFAF6 */
   --color-bg-secondary: #f7fafc;
   --color-border: #e2e8f0;
   
@@ -55,6 +55,7 @@ body {
   font-size: 1.125rem;
   line-height: 1.75;
   color: var(--color-text);
+  background: var(--color-bg); /* Added background */
 }
 
 .lead {
@@ -62,4 +63,9 @@ body {
   line-height: 1.8;
   color: var(--color-text-light);
   font-weight: 300;
+}
+
+/* Ensure all sections use the correct background */
+.section {
+  background: var(--color-bg);
 }
