@@ -9,8 +9,6 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 <html lang="en">
   <head>
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-    <!-- Add Playfair Display and Open Sans fonts from Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Open+Sans:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
       body {
         background-color: #FAFAF6;
@@ -18,13 +16,13 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
         padding: 0;
         font-family: 'Open Sans', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
       }
-      
+
       main {
         max-width: 1200px;
         margin: 0 auto;
         padding: 2rem;
       }
-      
+
       .hero {
         text-align: center;
         padding: 4rem 0;
@@ -32,7 +30,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
         margin-bottom: 4rem;
         background-color: #FAFAF6;
       }
-      
+
       .hero h1 {
         font-family: 'Playfair Display', serif;
         font-size: 60px;
@@ -43,7 +41,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
         letter-spacing: -0.02em;
         line-height: 1.2;
       }
-      
+
       .hero .tagline {
         font-size: 1.25rem;
         color: #4a5568;
@@ -51,15 +49,16 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
         margin: 0 auto;
         line-height: 1.8;
         font-weight: 300;
+        font-family: 'Open Sans', sans-serif;
       }
-      
+
       /* Updated styles for research section and below */
       .research-section {
         margin-bottom: 3rem;
         width: 100%;
         background-color: #FAFAF6;
       }
-      
+
       .research-section h2 {
         font-family: 'Open Sans', sans-serif;
         color: #1a365d;
@@ -70,7 +69,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
         line-height: 1.3;
         margin-top: 0;
       }
-      
+
       .research-articles {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -78,7 +77,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
         margin-top: 2rem;
         width: 100%;
       }
-      
+
       .research-article {
         padding: 1.5rem;
         background: white;
@@ -88,12 +87,12 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
         width: 100%;
         transition: transform 0.2s ease, box-shadow 0.2s ease;
       }
-      
+
       .research-article:hover {
         transform: translateY(-5px);
         box-shadow: 0 8px 15px rgba(0,0,0,0.1);
       }
-      
+
       .research-article h3 {
         font-family: 'Open Sans', sans-serif;
         color: #1a365d;
@@ -102,7 +101,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
         margin: 0 0 1rem 0;
         line-height: 1.3;
       }
-      
+
       .research-article p {
         font-family: 'Open Sans', sans-serif;
         color: #4a5568;
@@ -110,83 +109,17 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
         margin-bottom: 0;
         font-weight: 400;
       }
-      
-      /* New focus areas section styles */
-      .focus-areas-section {
-        background-color: #003A70; /* Blue container */
-        padding: 4rem 0;
-        margin: 4rem 0;
-        width: 100%;
-        border-radius: 12px;
-      }
-      
-      .focus-areas-container {
-        max-width: 1200px;
-        margin: 0 auto;
-        color: white;
-        padding: 0 2rem;
-      }
-      
-      .focus-areas-container h2 {
-        font-family: 'Open Sans', sans-serif;
-        color: white;
-        font-size: clamp(1.5rem, 4vw, 2.5rem);
-        font-weight: 600;
-        margin-bottom: 3rem;
-        text-align: center;
-        line-height: 1.3;
-        margin-top: 0;
-      }
-      
-      .focus-areas-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 2rem;
-      }
-      
-      .focus-area {
-        background: rgba(255, 255, 255, 0.1);
-        padding: 2rem;
-        border-radius: 12px;
-        backdrop-filter: blur(10px);
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-      }
-      
-      .focus-area:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-        background: rgba(255, 255, 255, 0.15);
-      }
-      
-      .focus-area h3 {
-        font-family: 'Open Sans', sans-serif;
-        color: white;
-        font-size: 1.5rem;
-        font-weight: 600;
-        margin-bottom: 1rem;
-        line-height: 1.3;
-      }
-      
-      .focus-area p {
-        font-family: 'Open Sans', sans-serif;
-        color: white;
-        font-size: 1.125rem;
-        line-height: 1.75;
-        margin-bottom: 0;
-        font-weight: 400;
-      }
-      
+
       .approach-section {
         margin-bottom: 3rem;
         width: 100%;
         background-color: #FAFAF6;
       }
-      
+
       .approach-section section {
         width: 100%;
       }
-      
+
       .approach-section h2 {
         font-family: 'Open Sans', sans-serif;
         color: #1a365d;
@@ -197,7 +130,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
         line-height: 1.3;
         margin-top: 0;
       }
-      
+
       .approach-section p {
         font-family: 'Open Sans', sans-serif;
         line-height: 1.75;
@@ -207,7 +140,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
         text-align: left;
         font-weight: 400;
       }
-      
+
       .commons-section {
         text-align: center;
         padding: 3rem 0;
@@ -217,7 +150,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
         margin: 4rem auto;
         background-color: #FAFAF6;
       }
-      
+
       .commons-section p {
         font-family: 'Open Sans', sans-serif;
         font-size: 1.125rem;
@@ -235,8 +168,8 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
       <section class="hero">
         <h1>Society & AI</h1>
         <p class="tagline">
-          We're an independent virtual lab exploring the cultural, ethical, and societal dimensions 
-          of artificial intelligence in service of global sustainability. The Society & AI lab is a 
+          We're an independent virtual lab exploring the cultural, ethical, and societal dimensions
+          of artificial intelligence in service of global sustainability. The Society & AI lab is a
           Scholarly Commons for Society-Centered AI design and deployment.
         </p>
       </section>
@@ -283,9 +216,9 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
       <section class="approach-section section">
         <h2>Our Approach</h2>
         <p>
-          We examine AI's transformation of society through rigorous scholarship and participatory research—synthesizing 
-          technical advances, cultural responses, and educational implications to build knowledge that serves the 
-          public good. Our work bridges academic research and community practice, ensuring that AI development 
+          We examine AI's transformation of society through rigorous scholarship and participatory research—synthesizing
+          technical advances, cultural responses, and educational implications to build knowledge that serves the
+          public good. Our work bridges academic research and community practice, ensuring that AI development
           remains accountable to societal needs and planetary boundaries.
         </p>
       </section>
@@ -293,10 +226,10 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
       <section class="approach-section section">
         <h2>Research Anchored in Educational Transformation</h2>
         <p>
-          With expertise in educational technology and systems design, we recognize education as humanity's primary 
-          adaptive mechanism. Our research begins with SDG 4: Quality Education—not as a narrow sectoral concern, 
-          but as the meta-system through which societies develop the capabilities to navigate technological change. 
-          We investigate how AI transforms knowledge creation, skill development, and collective learning across 
+          With expertise in educational technology and systems design, we recognize education as humanity's primary
+          adaptive mechanism. Our research begins with SDG 4: Quality Education—not as a narrow sectoral concern,
+          but as the meta-system through which societies develop the capabilities to navigate technological change.
+          We investigate how AI transforms knowledge creation, skill development, and collective learning across
           formal and informal settings.
         </p>
       </section>

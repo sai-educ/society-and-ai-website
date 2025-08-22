@@ -1,7 +1,7 @@
 /*
   The CSS in this style tag is based off of Bear Blog's default CSS.
-   https://github.com/HermanMartinus/bearblog/blob/297026a877bc2ab2b3bdfbd6b9f7961c350917dd/templates/styles/blog/default.css    
-  License MIT: https://github.com/HermanMartinus/bearblog/blob/master/LICENSE.md    
+   https://github.com/HermanMartinus/bearblog/blob/297026a877bc2ab2b3bdfbd6b9f7961c350917dd/templates/styles/blog/default.css
+  License MIT: https://github.com/HermanMartinus/bearblog/blob/master/LICENSE.md
  */
 
 :root {
@@ -19,6 +19,7 @@
 
 /* Add this at the top of the file after the existing :root variables */
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap');
 
 :root {
   --accent: #2337ff;
@@ -29,7 +30,7 @@
   --gray-dark: 34, 41, 57;
   --gray-gradient: rgba(var(--gray-light), 50%), #fff;
   --box-shadow: 0 2px 6px rgba(var(--gray), 25%), 0 8px 24px rgba(var(--gray), 33%), 0 16px 32px rgba(var(--gray), 33%);
-  
+
   /* Add new design system variables */
   --bg-primary: #FAFAF6;
   --text-primary: #2d3748;
@@ -101,9 +102,11 @@ h6 {
 	margin: 0 0 0.5rem 0;
 	color: rgb(var(--black));
 	line-height: 1.2;
+  font-family: 'Playfair Display', serif;
 }
 h1 {
 	font-size: 3.052em;
+  font-style: italic;
 }
 h2 {
 	font-size: 2.441em;
@@ -129,6 +132,7 @@ a:hover {
 }
 p {
 	margin-bottom: 1em;
+  font-family: 'Open Sans', sans-serif;
 }
 .prose p {
 	margin-bottom: 2em;
@@ -200,4 +204,70 @@ hr {
 /* Ensure hero sections use the correct background */
 .hero {
   background: var(--bg-primary) !important;
+}
+
+/* Focus areas section styles */
+.focus-areas-section {
+  background-color: #003A70; /* Blue container */
+  padding: 4rem 0;
+  margin: 4rem 0;
+  width: 100%;
+  border-radius: 12px;
+}
+
+.focus-areas-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  color: white;
+  padding: 0 2rem;
+}
+
+.focus-areas-container h2 {
+  font-family: 'Open Sans', sans-serif;
+  color: white;
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  font-weight: 600;
+  margin-bottom: 3rem;
+  text-align: center;
+  line-height: 1.3;
+  margin-top: 0;
+}
+
+.focus-areas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.focus-area {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 2rem;
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.focus-area:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.focus-area h3 {
+  font-family: 'Open Sans', sans-serif;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  line-height: 1.3;
+}
+
+.focus-area p {
+  font-family: 'Open Sans', sans-serif;
+  color: white;
+  font-size: 1.125rem;
+  line-height: 1.75;
+  margin-bottom: 0;
+  font-weight: 400;
 }
