@@ -38,6 +38,10 @@ const currentPath = Astro.url.pathname;
     position: sticky;
     top: 0;
     z-index: 100;
+    width: 100%;
+    /* Fix for navigation shifting */
+    padding-right: calc(100vw - 100%);
+    box-sizing: border-box;
   }
   
   .navigation {
@@ -47,6 +51,9 @@ const currentPath = Astro.url.pathname;
     justify-content: space-between;
     align-items: center;
     padding: 1rem 2rem;
+    /* Ensure consistent width */
+    width: 100%;
+    box-sizing: border-box;
   }
   
   .nav-brand a {
@@ -55,6 +62,8 @@ const currentPath = Astro.url.pathname;
     font-style: italic;
     color: var(--color-primary);
     text-decoration: none;
+    /* Prevent text shifting */
+    white-space: nowrap;
   }
   
   .nav-menu {
@@ -63,6 +72,8 @@ const currentPath = Astro.url.pathname;
     gap: 2rem;
     margin: 0;
     padding: 0;
+    /* Ensure consistent sizing */
+    flex-shrink: 0;
   }
   
   .nav-link {
@@ -70,11 +81,19 @@ const currentPath = Astro.url.pathname;
     text-decoration: none;
     font-weight: 500;
     transition: color 0.3s ease;
+    /* Prevent text wrapping */
+    white-space: nowrap;
   }
   
   .nav-link:hover,
   .nav-link.active {
     color: var(--color-accent);
+  }
+
+  /* Fix for scrollbar shifting */
+  html {
+    margin-left: calc(100vw - 100%);
+    margin-right: 0;
   }
 
   @media (max-width: 768px) {
