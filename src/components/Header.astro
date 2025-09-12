@@ -1,87 +1,235 @@
 ---
-import { SITE_TITLE } from '../consts';
 import HeaderLink from './HeaderLink.astro';
+import { SITE_TITLE } from '../consts';
 ---
 
 <header>
   <nav>
-    <h2><a href="/">{SITE_TITLE}</a></h2>
-    <div class="internal-links">
-      <HeaderLink href="/">Home</HeaderLink>
-      <HeaderLink href="/research">Research & Insights</HeaderLink>
-      <HeaderLink href="/sdg4">SDG 4</HeaderLink>
-      <HeaderLink href="/education">Education & Outreach</HeaderLink>
-      <HeaderLink href="/about">About</HeaderLink>
-      <HeaderLink href="/get-involved">Get Involved</HeaderLink>
-    </div>
-    <div class="social-links">
-      <!-- You can keep or remove these social links -->
+    <div class="nav-container">
+      <!-- Logo on the left -->
+      <div class="logo-section">
+        <a href="/" class="logo-link">
+          <h2 class="logo-text">{SITE_TITLE}</h2>
+          <!-- If you have a logo image, replace the h2 above with:
+          <img src="/images/logo.png" alt="Society & AI Lab" class="logo-image" />
+          -->
+        </a>
+      </div>
+      
+      <!-- Navigation items on the right -->
+      <div class="nav-links">
+        <HeaderLink href="/">Home</HeaderLink>
+        <HeaderLink href="/research">Research & Insights</HeaderLink>
+        <HeaderLink href="/sdg4">SDG 4</HeaderLink>
+        <HeaderLink href="/education">Education & Outreach</HeaderLink>
+        <HeaderLink href="/publications">Publications</HeaderLink>
+        <HeaderLink href="/about">About</HeaderLink>
+        <HeaderLink href="/get-involved">Get Involved</HeaderLink>
+      </div>
+      
+      <!-- Mobile menu button -->
+      <button class="mobile-menu-button" aria-label="Menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
     </div>
   </nav>
 </header>
 
 <style>
   header {
-    margin: 0;
-    padding: 0 1em;
     background: white;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-  }
-  
-  h2 {
-    margin: 0;
-    font-size: 1.2em;
-  }
-
-  h2 a,
-  h2 a.active {
-    text-decoration: none;
-    color: #1a365d;
-    font-style: italic;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid #e2e8f0;
   }
   
   nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 1rem 0;
+    width: 100%;
+    padding: 0;
   }
   
-  nav a {
-    padding: 1em 0.8em;
-    color: #2d3748;
-    border-bottom: 4px solid transparent;
+  .nav-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+  }
+  
+  /* Logo Section */
+  .logo-section {
+    flex-shrink: 0;
+  }
+  
+  .logo-link {
     text-decoration: none;
+    display: inline-block;
+  }
+  
+  .logo-text {
+    font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #0f62fe;
+    margin: 0;
+    letter-spacing: -0.01em;
+  }
+  
+  .logo-image {
+    height: 40px;
+    width: auto;
+  }
+  
+  /* Navigation Links */
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    margin-left: auto;
+  }
+  
+  /* Mobile Menu Button - Hidden on desktop */
+  .mobile-menu-button {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    color: #161616;
+  }
+  
+  /* Global styles for HeaderLink component */
+  :global(.nav-links a) {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 400;
+    color: #161616;
+    text-decoration: none;
+    padding: 0.5rem 0;
+    position: relative;
+    transition: color 0.2s ease;
+  }
+  
+  :global(.nav-links a:hover) {
+    color: #0f62fe;
+  }
+  
+  :global(.nav-links a.active) {
+    color: #0f62fe;
     font-weight: 500;
   }
   
-  nav a.active {
-    text-decoration: none;
-    border-bottom-color: #3182ce;
+  :global(.nav-links a.active::after) {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: #0f62fe;
   }
   
-  nav a:hover {
-    color: #3182ce;
+  /* Responsive Design */
+  @media (max-width: 1024px) {
+    .nav-container {
+      padding: 1rem 1.5rem;
+    }
+    
+    .nav-links {
+      gap: 1.5rem;
+    }
+    
+    :global(.nav-links a) {
+      font-size: 0.9rem;
+    }
   }
   
-  .social-links,
-  .social-links a {
-    display: flex;
-  }
-  
-  @media (max-width: 920px) {
-    .social-links {
+  @media (max-width: 868px) {
+    .nav-links {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: white;
+      flex-direction: column;
+      padding: 1rem 2rem 2rem;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      gap: 1rem;
+      align-items: flex-start;
+    }
+    
+    .nav-links.mobile-open {
+      display: flex;
+    }
+    
+    .mobile-menu-button {
+      display: block;
+    }
+    
+    :global(.nav-links a) {
+      width: 100%;
+      padding: 0.75rem 0;
+      border-bottom: 1px solid #f0f0f0;
+    }
+    
+    :global(.nav-links a.active::after) {
       display: none;
     }
-    
-    .internal-links {
-      display: flex;
-      flex-wrap: wrap;
+  }
+  
+  @media (max-width: 480px) {
+    .nav-container {
+      padding: 0.75rem 1rem;
     }
     
-    nav a {
-      padding: 0.5em 0.6em;
-      font-size: 0.9em;
+    .logo-text {
+      font-size: 1.25rem;
     }
   }
 </style>
+
+<script>
+  // Mobile menu toggle
+  document.addEventListener('DOMContentLoaded', () => {
+    const mobileMenuButton = document.querySelector('.mobile-menu-button');
+    const navLinks = document.querySelector('.nav-links');
+    
+    if (mobileMenuButton && navLinks) {
+      mobileMenuButton.addEventListener('click', () => {
+        navLinks.classList.toggle('mobile-open');
+        
+        // Update aria-expanded attribute for accessibility
+        const isOpen = navLinks.classList.contains('mobile-open');
+        mobileMenuButton.setAttribute('aria-expanded', isOpen.toString());
+      });
+      
+      // Close menu when clicking outside
+      document.addEventListener('click', (event) => {
+        const target = event.target as HTMLElement;
+        if (!target.closest('nav') && navLinks.classList.contains('mobile-open')) {
+          navLinks.classList.remove('mobile-open');
+          mobileMenuButton.setAttribute('aria-expanded', 'false');
+        }
+      });
+      
+      // Close menu when clicking on a link (for mobile)
+      const links = navLinks.querySelectorAll('a');
+      links.forEach(link => {
+        link.addEventListener('click', () => {
+          if (window.innerWidth <= 868) {
+            navLinks.classList.remove('mobile-open');
+            mobileMenuButton.setAttribute('aria-expanded', 'false');
+          }
+        });
+      });
+    }
+  });
+</script>
